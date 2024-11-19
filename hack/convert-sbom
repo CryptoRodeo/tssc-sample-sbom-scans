@@ -1,0 +1,21 @@
+SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )" 
+ 
+if [ $# == 0 ]; then 
+    echo "Missing log param"
+    exit 
+fi 
+
+log=$1
+echo "Processing log file $log into extraced directory" 
+bash $SCRIPTDIR/rhtap-process-logs $log 
+log="${log%.*}"
+sbom=$log-sbom.json 
+cp extracted/sbom.json $sbom  
+syft convert "$sbom" -o "cyclonedx-json@1.4=sbom.tmp"
+cat sbom.tmp | jq > $log-sbom-14.json 
+rm sbom.tmp 
+
+echo "sbom in $sbom"
+echo "sbom in 1.4 version $log-sbom-14.json"
+echo "Scans and Logs in ./extracted"
+ls -al ./extracted 
