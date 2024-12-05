@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: tssc-sample-sbom-scans
+  description: "sample catalog entry for jenkins " 
+  annotations: 
+    jenkins.io/job-full-name: tssc-sample-sbom-scan
+spec:
+  type: service
+  owner: guest
+  lifecycle: experimental
+ 
