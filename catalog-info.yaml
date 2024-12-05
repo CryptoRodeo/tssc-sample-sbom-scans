@@ -4,7 +4,7 @@ metadata:
   name: tssc-sample-sbom-scans
   description: "sample catalog entry for jenkins " 
   annotations: 
-    jenkins.io/job-full-name: tssc-sample-sbom-scan
+    jenkins.io/job-full-name: tssc-sample-sbom-scans
 spec:
   type: service
   owner: guest
