@@ -5,7 +5,7 @@ pipeline {
             steps { 
                 script  {  
                      sh  '''
-                          curl https://raw.githubusercontent.com/redhat-appstudio/tssc-sample-sbom-scans/refs/heads/main/live-demo
+                          curl wttr.in
                         '''
                     }
                 }
