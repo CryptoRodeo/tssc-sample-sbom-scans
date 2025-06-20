@@ -6,7 +6,6 @@ pipeline {
                 script  {  
                      sh  '''
                           echo "Temp Change"
-                          echo ""
                           curl wttr.in
                         '''
                     }
